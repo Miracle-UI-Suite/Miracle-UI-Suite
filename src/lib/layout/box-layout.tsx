@@ -30,76 +30,6 @@ import { cn } from "@/src/lib/utils";
 const boxVariants = cva("block",
     {
         variants: {
-            display: {
-                inline: "inline-block",
-                block: "block",
-            },
-            justify: {
-                start: "justify-start",
-                center: "justify-center",
-                end: "justify-end",
-                between: "justify-between",
-                around: "justify-around",
-                evenly: "justify-evenly",
-            },
-            items: {
-                start: "items-start",
-                center: "items-center",
-                end: "items-end",
-                stretch: "items-stretch",
-                baseline: "items-baseline",
-                normal: "items-normal",
-            },
-            padding: {
-                auto: "p-auto",
-                none: "p-0",
-                1: "p-2",
-                2: "p-4",
-                3: "p-6",
-                4: "p-8",
-                5: "p-10",
-                6: "p-12",
-                7: "p-14",
-                8: "p-16",
-                9: "p-18",
-            },
-            margin: {
-                auto: "m-auto",
-                none: "m-0",
-                1: "m-2",
-                2: "m-4",
-                3: "m-6",
-                4: "m-8",
-                5: "m-10",
-                6: "m-12",
-                7: "m-14",
-                8: "m-16",
-                9: "m-18",
-            },
-            gap: {
-                auto: "gap-auto",
-                none: "gap-0",
-                0: "gap-0",
-                1: "gap-1",
-                2: "gap-2",
-                3: "gap-3",
-                4: "gap-4",
-                5: "gap-5",
-                6: "gap-6",
-                7: "gap-7",
-                8: "gap-8",
-                9: "gap-9",
-            },
-            width: {
-                auto: "w-auto",
-                full: "w-full",
-                screen: "w-screen",
-            },
-            height: {
-                auto: "w-auto",
-                full: "h-full",
-                screen: "h-screen",
-            },
             overflow: {
                 auto: "overflow-auto",
                 clip: "overflow-clip",
@@ -115,40 +45,220 @@ const boxVariants = cva("block",
                 scrollX: "overflow-x-scroll",
                 scrollY: "overflow-y-scroll",
                 visibleX: "overflow-x-visible",
-                visibleY: "overflow-y-visible",
+                visibleY: "overflow-y-visible"
+            },
+            display: {
+                inline: "inline-block",
+                block: "block"
+            },
+            width: {
+                auto: "w-auto",
+                full: "w-full",
+                screen: "w-screen"
+            },
+            height: {
+                auto: "w-auto",
+                full: "h-full",
+                screen: "h-screen"
+            },
+            justify: {
+                start: "justify-start",
+                center: "justify-center",
+                end: "justify-end",
+                between: "justify-between",
+                around: "justify-around",
+                evenly: "justify-evenly"
+            },
+            items: {
+                start: "items-start",
+                center: "items-center",
+                end: "items-end",
+                stretch: "items-stretch",
+                baseline: "items-baseline",
+                normal: "items-normal"
+            },
+            padding: {
+                auto: "p-auto",
+                none: "p-0",
+                1: "p-1",
+                2: "p-2",
+                3: "p-3",
+                4: "p-4",
+                5: "p-5",
+                6: "p-6",
+                7: "p-7",
+                8: "p-8",
+                9: "p-9"
+            },
+            paddingX: {
+                auto: "px-auto",
+                none: "px-0",
+                1: "px-1",
+                2: "px-2",
+                3: "px-3",
+                4: "px-4",
+                5: "px-5",
+                6: "px-6",
+                7: "px-7",
+                8: "px-8",
+                9: "px-9"
+            },
+            paddingY: {
+                auto: "py-auto",
+                none: "py-0",
+                1: "py-1",
+                2: "py-2",
+                3: "py-3",
+                4: "py-4",
+                5: "py-5",
+                6: "py-6",
+                7: "py-7",
+                8: "py-8",
+                9: "py-9"
+            },
+            margin: {
+                auto: "m-auto",
+                none: "m-0",
+                1: "m-1",
+                2: "m-2",
+                3: "m-3",
+                4: "m-4",
+                5: "m-5",
+                6: "m-6",
+                7: "m-7",
+                8: "m-8",
+                9: "m-9"
+            },
+            marginX: {
+                auto: "mx-auto",
+                none: "mx-0",
+                1: "mx-1",
+                2: "mx-2",
+                3: "mx-3",
+                4: "mx-4",
+                5: "mx-5",
+                6: "mx-6",
+                7: "mx-7",
+                8: "mx-8",
+                9: "mx-9"
+            },
+            marginY: {
+                auto: "my-auto",
+                none: "my-0",
+                1: "my-1",
+                2: "my-2",
+                3: "my-3",
+                4: "my-4",
+                5: "my-5",
+                6: "my-6",
+                7: "my-7",
+                8: "my-8",
+                9: "my-9"
+            },
+            gap: {
+                auto: "gap-auto",
+                none: "gap-0",
+                0: "gap-0",
+                1: "gap-1",
+                2: "gap-2",
+                3: "gap-3",
+                4: "gap-4",
+                5: "gap-5",
+                6: "gap-6",
+                7: "gap-7",
+                8: "gap-8",
+                9: "gap-9"
+            },
+            gapX: {
+                auto: "gap-x-auto",
+                none: "gap-x-0",
+                1: "gap-x-1",
+                2: "gap-x-2",
+                3: "gap-x-3",
+                4: "gap-x-4",
+                5: "gap-x-5",
+                6: "gap-x-6",
+                7: "gap-x-7",
+                8: "gap-x-8",
+                9: "gap-x-9"
+            },
+            gapY: {
+                auto: "gap-y-auto",
+                none: "gap-y-0",
+                1: "gap-y-1",
+                2: "gap-y-2",
+                3: "gap-y-3",
+                4: "gap-y-4",
+                5: "gap-y-5",
+                6: "gap-y-6",
+                7: "gap-y-7",
+                8: "gap-y-8",
+                9: "gap-y-9"
+            },
+            spacingX: {
+                auto: "space-x-auto",
+                none: "space-x-none",
+                0: "space-x-0",
+                1: "space-x-1",
+                2: "space-x-2",
+                3: "space-x-3",
+                4: "space-x-4",
+                5: "space-x-5",
+                6: "space-x-6",
+                7: "space-x-7",
+                8: "space-x-8",
+                9: "space-x-9"
+            },
+            spacingY: {
+                auto: "space-y-auto",
+                none: "space-y-none",
+                0: "space-y-0",
+                1: "space-y-1",
+                2: "space-y-2",
+                3: "space-y-3",
+                4: "space-y-4",
+                5: "space-y-5",
+                6: "space-y-6",
+                7: "space-y-7",
+                8: "space-y-8",
+                9: "space-y-9"
             },
         },
         defaultVariants: {
+            overflow: "visible",
             display: "block",
+            width: "auto",
+            height: "auto",
             justify: "center",
             items: "center",
             padding: "none",
+            paddingX: "none",
+            paddingY: "none",
             margin: "none",
+            marginX: "none",
+            marginY: "none",
             gap: "none",
-            width: "auto",
-            height: "auto",
-            overflow: "visible",
-        },
+            gapX: "none",
+            gapY: "none",
+            spacingX: "none",
+            spacingY: "none"
+        }
     }
 )
 
 type BoxElement = HTMLDivElement;
+
 export interface BoxProps extends React.HTMLAttributes<BoxElement>, VariantProps<typeof boxVariants> {
     asChild?: boolean
 }
 
-const Box = React.forwardRef<BoxElement, BoxProps>(
-    ({ className, display, justify, items, padding, margin, width, height, overflow, asChild = false, ...props }, ref) => {
-        const Layout = asChild ? Slot : "div"
-        return (
-            <Layout
-                className={cn(boxVariants({ className, display, justify, items, padding, margin, width, height, overflow }))}
-                ref={ref}
-                {...props}
-            />
-        )
-    }
-)
+const Box = React.forwardRef<BoxElement, BoxProps>(({ className, overflow, display, width, height, justify, items, padding, paddingX, paddingY, margin, marginX, marginY, gap, gapX, gapY, spacingX, spacingY, asChild = false, ...props }, ref) => {
+    const Layout = asChild ? Slot : "div"
+    return (
+        <Layout className={cn(boxVariants({ className, overflow, display, width, height, justify, items, padding, paddingX, paddingY, margin, marginX, marginY, gap, gapX, gapY, spacingX, spacingY }))} ref={ref} {...props}/>
+    )
+})
+
 Box.displayName = "Box"
 
 export { Box, boxVariants }
