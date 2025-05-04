@@ -88,6 +88,12 @@ const flexVariants = cva("flex",
                 baseline: "items-baseline",
                 normal: "items-normal"
             },
+            align: {
+                left: "text-left",
+                right: "text-right",
+                center: "text-center",
+                justify: "text-justify"
+            },
             padding: {
                 auto: "p-auto",
                 none: "p-0",
@@ -236,7 +242,7 @@ const flexVariants = cva("flex",
             },
         },
         defaultVariants: {
-            overflow: "visible",
+            overflow: "hidden",
             display: "flex",
             direction: "row",
             wrap: "wrap",
@@ -244,6 +250,7 @@ const flexVariants = cva("flex",
             height: "auto",
             justify: "center",
             items: "center",
+            align: "left",
             padding: "none",
             paddingX: "none",
             paddingY: "none",
@@ -265,13 +272,13 @@ export interface FlexProps extends React.HTMLAttributes<FlexElement>, VariantPro
     asChild?: boolean
 }
 
-const Flex = React.forwardRef<FlexElement, FlexProps>(({ className, overflow, display, direction, wrap, width, height, justify, items, padding, paddingX, paddingY, margin, marginX, marginY, gap, gapX, gapY, spacingX, spacingY, asChild = false, ...props }, ref) => {
+const FlexLayout = React.forwardRef<FlexElement, FlexProps>(({ className, overflow, display, direction, wrap, width, height, justify, items, align, padding, paddingX, paddingY, margin, marginX, marginY, gap, gapX, gapY, spacingX, spacingY, asChild = false, ...props }, ref) => {
     const Layout = asChild ? Slot : "div"
     return (
-        <Layout className={cn(flexVariants({ className, overflow, display, direction, wrap, width, height, justify, items, padding, paddingX, paddingY, margin, marginX, marginY, gap, gapX, gapY, spacingX, spacingY }))} ref={ref} {...props}/>
+        <Layout className={cn(flexVariants({ className, overflow, display, direction, wrap, width, height, justify, items, align, padding, paddingX, paddingY, margin, marginX, marginY, gap, gapX, gapY, spacingX, spacingY }))} ref={ref} {...props}/>
     )
 })
 
-Flex.displayName = "Flex"
+FlexLayout.displayName = "FlexLayout"
 
-export { Flex, flexVariants }
+export { FlexLayout, flexVariants }

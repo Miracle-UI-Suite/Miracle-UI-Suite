@@ -107,6 +107,12 @@ const gridVariants = cva("grid",
                 baseline: "items-baseline",
                 normal: "items-normal"
             },
+            align: {
+                left: "text-left",
+                right: "text-right",
+                center: "text-center",
+                justify: "text-justify"
+            },
             padding: {
                 auto: "p-auto",
                 none: "p-0",
@@ -255,7 +261,7 @@ const gridVariants = cva("grid",
             },
         },
         defaultVariants: {
-            overflow: "visible",
+            overflow: "hidden",
             display: "grid",
             column: "auto",
             row: "auto",
@@ -264,6 +270,7 @@ const gridVariants = cva("grid",
             height: "auto",
             justify: "center",
             items: "center",
+            align: "left",
             padding: "none",
             paddingX: "none",
             paddingY: "none",
@@ -285,13 +292,13 @@ export interface GridProps extends React.HTMLAttributes<GridElement>, VariantPro
     asChild?: boolean
 }
 
-const Grid = React.forwardRef<GridElement, GridProps>(({ className, overflow, display, column, row, flow, width, height, justify, items, padding, paddingX, paddingY, margin, marginX, marginY, gap, gapX, gapY, spacingX, spacingY, asChild = false, ...props }, ref) => {
+const GridLayout = React.forwardRef<GridElement, GridProps>(({ className, overflow, display, column, row, flow, width, height, justify, items, align, padding, paddingX, paddingY, margin, marginX, marginY, gap, gapX, gapY, spacingX, spacingY, asChild = false, ...props }, ref) => {
     const Layout = asChild ? Slot : "div"
     return (
-        <Layout className={cn(gridVariants({ className, overflow, display, column, row, flow, width, height, justify, items, padding, paddingX, paddingY, margin, marginX, marginY, gap, gapX, gapY, spacingX, spacingY }))} ref={ref} {...props}/>
+        <Layout className={cn(gridVariants({ className, overflow, display, column, row, flow, width, height, justify, items, align, padding, paddingX, paddingY, margin, marginX, marginY, gap, gapX, gapY, spacingX, spacingY }))} ref={ref} {...props}/>
     )
 })
 
-Grid.displayName = "Grid"
+GridLayout.displayName = "GridLayout"
 
-export { Grid, gridVariants }
+export { GridLayout, gridVariants }

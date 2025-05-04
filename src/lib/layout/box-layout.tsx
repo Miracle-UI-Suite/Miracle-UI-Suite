@@ -77,6 +77,12 @@ const boxVariants = cva("block",
                 baseline: "items-baseline",
                 normal: "items-normal"
             },
+            align: {
+                left: "text-left",
+                right: "text-right",
+                center: "text-center",
+                justify: "text-justify"
+            },
             padding: {
                 auto: "p-auto",
                 none: "p-0",
@@ -225,12 +231,13 @@ const boxVariants = cva("block",
             },
         },
         defaultVariants: {
-            overflow: "visible",
+            overflow: "hidden",
             display: "block",
             width: "auto",
             height: "auto",
             justify: "center",
             items: "center",
+            align: "left",
             padding: "none",
             paddingX: "none",
             paddingY: "none",
@@ -252,13 +259,13 @@ export interface BoxProps extends React.HTMLAttributes<BoxElement>, VariantProps
     asChild?: boolean
 }
 
-const Box = React.forwardRef<BoxElement, BoxProps>(({ className, overflow, display, width, height, justify, items, padding, paddingX, paddingY, margin, marginX, marginY, gap, gapX, gapY, spacingX, spacingY, asChild = false, ...props }, ref) => {
+const BoxLayout = React.forwardRef<BoxElement, BoxProps>(({ className, overflow, display, width, height, justify, items, align, padding, paddingX, paddingY, margin, marginX, marginY, gap, gapX, gapY, spacingX, spacingY, asChild = false, ...props }, ref) => {
     const Layout = asChild ? Slot : "div"
     return (
-        <Layout className={cn(boxVariants({ className, overflow, display, width, height, justify, items, padding, paddingX, paddingY, margin, marginX, marginY, gap, gapX, gapY, spacingX, spacingY }))} ref={ref} {...props}/>
+        <Layout className={cn(boxVariants({ className, overflow, display, width, height, justify, items, align, padding, paddingX, paddingY, margin, marginX, marginY, gap, gapX, gapY, spacingX, spacingY }))} ref={ref} {...props}/>
     )
 })
 
-Box.displayName = "Box"
+BoxLayout.displayName = "BoxLayout"
 
-export { Box, boxVariants }
+export { BoxLayout, boxVariants }
