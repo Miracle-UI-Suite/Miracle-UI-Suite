@@ -22,9 +22,6 @@
  * SOFTWARE.
  */
 
-import './tailwind/theme.css';
-export * from './components/index';
-export * from './hooks/index';
-export * from './layout/index';
-export * from './semantic/index';
-export * from './typography/index';
+export * from './heading';
+export * from './paragraph';
+export * from './text';
