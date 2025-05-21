@@ -1,5 +1,6 @@
 # Node modules
-node_modules
+node_modules/
+.storybook/
 
 # Build output
 dist
@@ -27,3 +28,4 @@ Thumbs.db
 
 # TypeScript cache
 *.tsbuildinfo
+*storybook.log
