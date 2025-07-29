@@ -1,7 +1,7 @@
-/** 
+/**
  * MIT License
- * 
- * Copyright (c) [2025] [Zyron, Head Quarters] {@link https://github.com/Zyron-HQ}.
+ *
+ * Copyright (c) [2025] [Miracle UI, Library] {@link https://github.com/Miracle-UI-Suite}.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,21 +22,18 @@
  * SOFTWARE.
  */
 
-import * as React from "react"
+import { ComponentPropsWithoutRef, ElementType } from 'react'
 
-import { cn } from "@/src/utilities/utils"
+type ElementPropsAs<
+  E extends ElementType<any>,
+  P extends ComponentPropsWithoutRef<E>['as']
+> = Omit<Extract<ComponentPropsWithoutRef<E>, { as: P }>, 'as' | 'asChild'>
 
-function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
-  return (
-    <textarea
-      data-slot="textarea"
-      className={cn(
-        "border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 flex field-sizing-content min-h-16 w-full rounded-md border bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
-        className
-      )}
-      {...props}
-    />
-  )
-}
+type ElementPropsWithout<
+  P extends ElementType,
+  O extends Omit<string, keyof ComponentPropsWithoutRef<P>>
+> = Omit<ComponentPropsWithoutRef<P>, O & string>
 
-export { Textarea }
+type RemovedProps = 'asChild' | 'defaultChecked' | 'defaultValue' | 'color'
+
+export type { ElementPropsAs, ElementPropsWithout, RemovedProps }

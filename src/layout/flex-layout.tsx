@@ -24,16 +24,15 @@
 
 import { forwardRef } from "react";
 import { Slot } from "@radix-ui/react-slot";
-
-import { FlexElement } from "./flex-types";
-import { FlexProps } from "./flex-props";
-import { cn } from "../utilities/utils";
-import { resolveEnumClass, resolveResponsiveClass } from "../utilities/breakpoints-utils";
+import { cn } from "@/src/utilities/utils";
+import { resolveEnumClass, resolveResponsiveClass } from "@/src/utilities/breakpoints-utils";
+import { FlexElement, FlexProps } from "./flex-props";
 
 const FlexLayout = forwardRef<FlexElement, FlexProps>(
   (
     {
       asChild = false,
+      as: Tag = "div",
       className,
       display,
       position,
@@ -82,12 +81,15 @@ const FlexLayout = forwardRef<FlexElement, FlexProps>(
     },
     ref
   ) => {
-    const Layout = asChild ? Slot : "div";
+    
+    const Layout = asChild ? Slot : Tag;
 
     const dynamicClasses = [
       ...resolveEnumClass(display),
       ...resolveEnumClass(position),
       ...resolveEnumClass(overflow),
+      ...resolveEnumClass(visibility),
+      ...resolveEnumClass(pointerEvents),
       ...resolveResponsiveClass("flex", direction),
       ...resolveResponsiveClass("flex", wrap),
       ...resolveResponsiveClass("justify", justify),
@@ -96,9 +98,7 @@ const FlexLayout = forwardRef<FlexElement, FlexProps>(
 
       ...resolveResponsiveClass("z", zIndex),
       ...resolveResponsiveClass("aspect", aspectRatio),
-      ...resolveEnumClass(visibility),
       ...resolveResponsiveClass("opacity", opacity),
-      ...resolveEnumClass(pointerEvents),
 
       ...(size ? [
         ...resolveResponsiveClass("w", size),
@@ -138,12 +138,10 @@ const FlexLayout = forwardRef<FlexElement, FlexProps>(
       ...resolveResponsiveClass("space-y", spaceY),
     ];
 
-    return (
-      <Layout ref={ref} className={cn("flex", dynamicClasses, className)} {...props} />
-    );
+    return <Layout ref={ref} className={cn("flex", dynamicClasses, className)} {...props} />;
   }
 );
 
 FlexLayout.displayName = "FlexLayout";
 
-export { FlexLayout };
+export { FlexLayout as default };
