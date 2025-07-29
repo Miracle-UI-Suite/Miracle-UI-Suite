@@ -24,8 +24,8 @@
 
 import { forwardRef } from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { cn } from "@/src/utilities/utils";
-import { resolveEnumClass, resolveResponsiveClass } from "@/src/utilities/breakpoints-utils";
+import { cn } from "../utilities/utils";
+import { resolveEnumClass, resolveResponsiveClass } from "../utilities/breakpoints-utils";
 import { FlexElement, FlexProps } from "./flex-props";
 
 const FlexLayout = forwardRef<FlexElement, FlexProps>(

@@ -25,21 +25,21 @@
 import type { HTMLAttributes } from 'react';
 import { ElementPropsWithout, RemovedProps } from "../helpers/element-props"; 
 
-export type FlexElement = HTMLDivElement;
+type FlexDivProps = { as?: "div" } & ElementPropsWithout<"div", RemovedProps>;
 
-export type FlexDivProps = { as?: "div" } & ElementPropsWithout<"div", RemovedProps>;
+type FlexSpanProps = { as?: "span" } & ElementPropsWithout<"span", RemovedProps>;
 
-export type FlexSpanProps = { as?: "span" } & ElementPropsWithout<"span", RemovedProps>;
+type FlexElement = HTMLDivElement;
 
-export type FlexProps = FlexProperties & (FlexDivProps | FlexSpanProps);
+type FlexProps = FlexProperties & (FlexDivProps | FlexSpanProps);
 
-export type ResponsiveValue<T> = T | { initial?: T;[key: string]: T | undefined };
+type ResponsiveValue<T> = T | { initial?: T;[key: string]: T | undefined };
 
-export type NumericScale =
+type NumericScale =
     | 0 | 0.5 | 1 | 1.5 | 2 | 2.5 | 3 | 3.5 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 14
     | 16 | 20 | 24 | 28 | 32 | 36 | 40 | 44 | 48 | 52 | 56 | 60 | 64 | 72 | 80 | 96;
 
-export type FractionalScale =
+type FractionalScale =
     | "1/2" | "1/3" | "2/3"
     | `1/${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12}`
     | `2/${2 | 4 | 5 | 6 | 8 | 10 | 12}`
@@ -49,31 +49,31 @@ export type FractionalScale =
     | `6/${7 | 8 | 10 | 12}`
     | `7/8` | `8/9` | `9/10` | `10/11` | `11/12`;
 
-export type ZIndex = "0" | "10" | "20" | "30" | "40" | "50" | "auto";
-export type AspectRatio = "auto" | "square" | "video" | `${number}/${number}`;
-export type Visibility = "visible" | "invisible";
-export type Opacity = 0 | 25 | 50 | 75 | 100;
-export type PointerEvents = "none" | "auto";
+type ZIndex = "0" | "10" | "20" | "30" | "40" | "50" | "auto";
+type AspectRatio = "auto" | "square" | "video" | `${number}/${number}`;
+type Visibility = "visible" | "invisible";
+type Opacity = 0 | 25 | 50 | 75 | 100;
+type PointerEvents = "none" | "auto";
 
-export type SpacingValue = NumericScale | "auto" | "px";
-export type WidthHeightValue = | NumericScale | FractionalScale | "auto" | "px" | "full" | "fit" | "screen" | "min" | "max" | "fit-content" | "min-content" | "max-content";
+type SpacingValue = NumericScale | "auto" | "px";
+type WidthHeightValue = | NumericScale | FractionalScale | "auto" | "px" | "full" | "fit" | "screen" | "min" | "max" | "fit-content" | "min-content" | "max-content";
 
-export type WidthValue = WidthHeightValue | "dvw" | "lvw" | "svw";
-export type HeightValue = WidthHeightValue | "dvh" | "lvh" | "svh";
+type WidthValue = WidthHeightValue | "dvw" | "lvw" | "svw";
+type HeightValue = WidthHeightValue | "dvh" | "lvh" | "svh";
 
-export type MinWidthHeightValue = | WidthHeightValue | "none" | "3xs" | "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl";
-export type MaxWidthHeightValue = MinWidthHeightValue;
+type MinWidthHeightValue = | WidthHeightValue | "none" | "3xs" | "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl";
+type MaxWidthHeightValue = MinWidthHeightValue;
 
-export type SizeValue = | NumericScale | FractionalScale | "auto" | "px" | "full" | "fit" | "screen" | "min" | "max" | "dvw" | "lvw" | "svw" | "dvh" | "lvh" | "svh";
+type SizeValue = | NumericScale | FractionalScale | "auto" | "px" | "full" | "fit" | "screen" | "min" | "max" | "dvw" | "lvw" | "svw" | "dvh" | "lvh" | "svh";
 
-export type Overflow = "auto" | "clip" | "hidden" | "scroll" | "visible";
-export type PositionValue = "static" | "relative" | "absolute" | "fixed" | "sticky";
-export type Display = "flex" | "inline-flex" | "block" | "inline-block" | "hidden";
-export type Direction = "row" | "col" | "row-reverse" | "col-reverse";
-export type Wrap = "nowrap" | "wrap" | "wrap-reverse";
-export type ItemsValue = "start" | "center" | "end" | "stretch" | "baseline";
-export type JustifyValue = "start" | "center" | "end" | "between" | "around" | "evenly";
-export type AlignValue = "left" | "center" | "right" | "justify";
+type Overflow = "auto" | "clip" | "hidden" | "scroll" | "visible";
+type PositionValue = "static" | "relative" | "absolute" | "fixed" | "sticky";
+type Display = "flex" | "inline-flex" | "block" | "inline-block" | "hidden";
+type Direction = "row" | "col" | "row-reverse" | "col-reverse";
+type Wrap = "nowrap" | "wrap" | "wrap-reverse";
+type ItemsValue = "start" | "center" | "end" | "stretch" | "baseline";
+type JustifyValue = "start" | "center" | "end" | "between" | "around" | "evenly";
+type AlignValue = "left" | "center" | "right" | "justify";
 
 interface FlexProperties extends HTMLAttributes<FlexElement> {
   asChild?: boolean
@@ -129,3 +129,5 @@ interface FlexProperties extends HTMLAttributes<FlexElement> {
   spaceX?: ResponsiveValue<NumericScale>
   spaceY?: ResponsiveValue<NumericScale>
 }
+
+export type { FlexElement, FlexProps };
