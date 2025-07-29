@@ -1,7 +1,7 @@
-/** 
+/**
  * MIT License
- * 
- * Copyright (c) [2025] [Zyron, Head Quarters] {@link https://github.com/Zyron-HQ}.
+ *
+ * Copyright (c) [2025] [Miracle UI, Library] {@link https://github.com/Miracle-UI-Suite}.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,7 +25,7 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/src/utils";
+import { cn } from "@/src/utilities/utils";
 
 const anchorVariants = cva("relative",
     {
@@ -250,7 +250,7 @@ const anchorVariants = cva("relative",
 
 type AnchorElement = HTMLDivElement;
 
-export interface AnchorProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof anchorVariants> {
+export interface AnchorProps extends React.HTMLAttributes<AnchorElement>, VariantProps<typeof anchorVariants> {
     asChild?: boolean
 }
 

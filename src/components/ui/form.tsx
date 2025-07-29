@@ -1,7 +1,7 @@
-/** 
+/**
  * MIT License
- * 
- * Copyright (c) [2025] [Zyron, Head Quarters] {@link https://github.com/Zyron-HQ}.
+ *
+ * Copyright (c) [2025] [Miracle UI, Library] {@link https://github.com/Miracle-UI-Suite}.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -35,7 +35,7 @@ import {
   type FieldValues,
 } from "react-hook-form"
 
-import { cn } from "@/src/utils"
+import { cn } from "@/src/utilities/utils"
 import { Label } from "@/src/lib/components/ui/label"
 
 const Form = FormProvider

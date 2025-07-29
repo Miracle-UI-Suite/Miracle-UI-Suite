@@ -1,7 +1,7 @@
-/** 
+/**
  * MIT License
- * 
- * Copyright (c) [2025] [Zyron, Head Quarters] {@link https://github.com/Zyron-HQ}.
+ *
+ * Copyright (c) [2025] [Miracle UI, Library] {@link https://github.com/Miracle-UI-Suite}.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,52 +24,72 @@
 
 import * as React from "react"
 import * as AvatarPrimitive from "@radix-ui/react-avatar"
+import { cva, type VariantProps } from "class-variance-authority"
+import { cn } from "@/src/utilities/utils"
 
-import { cn } from "@/src/utils"
+const avatarVariants = cva("inline-flex items-center justify-center align-middle gap-2 whitespace-nowrap rounded-md text-sm font-normal transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+    {
+        variants: {
+            size: {
+                badge: "h-7 gap-1.5 p-1 text-sm normal font-medium text-muted-foreground",
+                default: "h-8 md:h-9 text-xs md:text-sm px-3 md:px-4 py-2",
+                natural: "h-9 px-4 py-2",
+                small: "h-8 px-3 text-xs",
+                large: "h-10 px-8",
+                action: "h-8 px-2 py-2 text-xs shadow-none",
+                icon: "h-8 w-8 px-2 py-2 shadow-none",
+                social: "h-8 w-8 px-2 py-2",
+                wide: "h-9 w-full px-4 py-2",
+            },
+            radius: {
+                none: "rounded-none",
+                small: "rounded-sm",
+                medium: "rounded-md",
+                large: "rounded-lg",
+                full: "rounded-full",
+            },
+        },
+        defaultVariants: {
+            size: "natural",
+            radius: "medium"
+        },
+    }
+)
 
-function Avatar({
-  className,
-  ...props
-}: React.ComponentProps<typeof AvatarPrimitive.Root>) {
-  return (
-    <AvatarPrimitive.Root
-      data-slot="avatar"
-      className={cn(
-        "relative flex size-8 shrink-0 overflow-hidden rounded-full",
-        className
-      )}
-      {...props}
-    />
-  )
+interface AvatarProps extends React.ComponentProps<typeof AvatarPrimitive.Root>, VariantProps<typeof avatarVariants> {}
+
+function Avatar({ className, size, radius, ...props }: AvatarProps) {
+    return (
+        <AvatarPrimitive.Root
+            data-slot="avatar"
+            className={cn(avatarVariants({ size, radius }), className)}
+            {...props}
+        />
+    )
 }
 
-function AvatarImage({
-  className,
-  ...props
-}: React.ComponentProps<typeof AvatarPrimitive.Image>) {
-  return (
-    <AvatarPrimitive.Image
-      data-slot="avatar-image"
-      className={cn("aspect-square size-full", className)}
-      {...props}
-    />
-  )
+interface AvatarImageProps extends React.ComponentProps<typeof AvatarPrimitive.Image> {}
+
+function AvatarImage({ className, ...props }: AvatarImageProps) {
+    return (
+        <AvatarPrimitive.Image
+            data-slot="avatar-image"
+            className={cn("aspect-square size-full", className)}
+            {...props}
+        />
+    )
 }
 
-function AvatarFallback({
-  className,
-  ...props
-}: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {
-  return (
-    <AvatarPrimitive.Fallback
-      data-slot="avatar-fallback"
-      className={cn(
-        "bg-muted flex size-full items-center justify-center rounded-full",
-        className
-      )}
-      {...props}
-    />
-  )
+interface AvatarFallbackProps extends React.ComponentProps<typeof AvatarPrimitive.Fallback> {}
+
+function AvatarFallback({ className, ...props }: AvatarFallbackProps) {
+    return (
+        <AvatarPrimitive.Fallback
+            data-slot="avatar-fallback"
+            className={cn("bg-muted flex size-full items-center justify-center rounded-full", className)}
+            {...props}
+        />
+    )
 }
 
 export { Avatar, AvatarImage, AvatarFallback }

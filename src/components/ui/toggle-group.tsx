@@ -1,7 +1,7 @@
-/** 
+/**
  * MIT License
- * 
- * Copyright (c) [2025] [Zyron, Head Quarters] {@link https://github.com/Zyron-HQ}.
+ *
+ * Copyright (c) [2025] [Miracle UI, Library] {@link https://github.com/Miracle-UI-Suite}.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,7 @@ import * as React from "react"
 import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group"
 import { type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/src/utils"
+import { cn } from "@/src/utilities/utils"
 import { toggleVariants } from "@/src/lib/components/ui/toggle"
 
 const ToggleGroupContext = React.createContext<

@@ -22,8 +22,36 @@
  * SOFTWARE.
  */
 
-export * from "./anchor-layout";
-export * from "./box-layout";
-export * from "./constraint-layout";
-export * from "./flex-layout";
-export * from "./grid-layout";
+const breakpointAliasMap: Record<string, string> = {
+	initial: "",
+	small: "sm",
+	medium: "md",
+	large: "lg",
+	xl: "xl",
+	"2xl": "2xl",
+};
+
+export const resolveResponsiveClass = <T extends string | number>(
+	prefix: string,
+	value?: T | { initial?: T; [key: string]: T | undefined }
+): string[] => {
+	if (value === undefined) return [];
+	if (typeof value !== "object") return [`${prefix}-${value}`];
+
+	return Object.entries(value).map(([key, val]) => {
+		const bp = breakpointAliasMap[key] ?? key;
+		return bp ? `${bp}:${prefix}-${val}` : `${prefix}-${val}`;
+	});
+};
+
+export const resolveEnumClass = <T extends string>(
+	value?: T | { initial?: T; [key: string]: T | undefined }
+): string[] => {
+	if (!value) return [];
+	if (typeof value !== "object") return [value];
+
+	return Object.entries(value).map(([key, val]) => {
+		const bp = breakpointAliasMap[key] ?? key;
+		return bp ? `${bp}:${val}` : `${val}`;
+	});
+};
