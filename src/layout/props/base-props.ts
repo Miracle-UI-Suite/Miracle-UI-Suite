@@ -22,18 +22,18 @@
  * SOFTWARE.
  */
 
-import type { HTMLAttributes } from 'react';
-import { ElementPropsWithout, RemovedProps } from "../helpers/element-props"; 
+import type { HTMLAttributes, JSX } from 'react';
+import { ElementPropsWithout, RemovedProps } from '../../helpers/element-props';
 
-type FlexDivProps = { as?: "div" } & ElementPropsWithout<"div", RemovedProps>;
+type BaseElement = keyof JSX.IntrinsicElements;
 
-type FlexSpanProps = { as?: "span" } & ElementPropsWithout<"span", RemovedProps>;
+type BaseDivProps = { as?: "div" } & ElementPropsWithout<"div", RemovedProps>;
+type BaseSpanProps = { as?: "span" } & ElementPropsWithout<"span", RemovedProps>;
 
-type FlexElement = HTMLDivElement;
+type ResponsiveValue<T> = 
+  | T 
+  | { initial: T; [breakpoint: string]: T | undefined };
 
-type FlexProps = FlexProperties & (FlexDivProps | FlexSpanProps);
-
-type ResponsiveValue<T> = T | { initial?: T;[key: string]: T | undefined };
 
 type NumericScale =
     | 0 | 0.5 | 1 | 1.5 | 2 | 2.5 | 3 | 3.5 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 14
@@ -68,26 +68,16 @@ type SizeValue = | NumericScale | FractionalScale | "auto" | "px" | "full" | "fi
 
 type Overflow = "auto" | "clip" | "hidden" | "scroll" | "visible";
 type PositionValue = "static" | "relative" | "absolute" | "fixed" | "sticky";
-type Display = "flex" | "inline-flex" | "block" | "inline-block" | "hidden";
-type Direction = "row" | "col" | "row-reverse" | "col-reverse";
-type Wrap = "nowrap" | "wrap" | "wrap-reverse";
-type ItemsValue = "start" | "center" | "end" | "stretch" | "baseline";
-type JustifyValue = "start" | "center" | "end" | "between" | "around" | "evenly";
-type AlignValue = "left" | "center" | "right" | "justify";
+type Display = 'block' | 'inline' | 'inline-block' | 'flex' | 'inline-flex' | 'grid' | 'hidden';
 
-interface FlexProperties extends HTMLAttributes<FlexElement> {
-  asChild?: boolean
-  as?: Element
-  className?: string
+interface BaseLayoutProps extends HTMLAttributes<HTMLElement> {
+  asChild?: boolean;
+  as?: BaseElement;
+  className?: string;
 
   display?: ResponsiveValue<Display>
   position?: ResponsiveValue<PositionValue>
   overflow?: ResponsiveValue<Overflow>
-  direction?: ResponsiveValue<Direction>
-  wrap?: ResponsiveValue<Wrap>
-  justify?: ResponsiveValue<JustifyValue>
-  items?: ResponsiveValue<ItemsValue>
-  align?: ResponsiveValue<AlignValue>
 
   zIndex?: ResponsiveValue<ZIndex>
   aspectRatio?: ResponsiveValue<AspectRatio>
@@ -130,4 +120,6 @@ interface FlexProperties extends HTMLAttributes<FlexElement> {
   spaceY?: ResponsiveValue<NumericScale>
 }
 
-export type { FlexElement, FlexProps };
+type BaseProps = BaseLayoutProps & (BaseDivProps | BaseSpanProps);
+
+export type { BaseProps };

@@ -22,13 +22,18 @@
  * SOFTWARE.
  */
 
-import { forwardRef } from "react";
+import { forwardRef, Ref } from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "../utilities/utils";
-import { resolveEnumClass, resolveResponsiveClass } from "../utilities/breakpoints-utils";
-import { FlexElement, FlexProps } from "./flex-props";
+import {
+  resolveEnumClass,
+  resolveResponsiveClass
+} from "../utilities/breakpoints-utils";
+import type { FlexProps } from "./props/flex-props";
 
-const FlexLayout = forwardRef<FlexElement, FlexProps>(
+type DefaultElement = HTMLDivElement;
+
+const FlexLayout = forwardRef<DefaultElement, FlexProps>(
   (
     {
       asChild = false,
@@ -79,23 +84,23 @@ const FlexLayout = forwardRef<FlexElement, FlexProps>(
       spaceY,
       ...props
     },
-    ref
+    ref: Ref<DefaultElement>
   ) => {
-    
-    const Layout = asChild ? Slot : Tag;
+    const Component = asChild ? Slot : Tag;
 
-    const dynamicClasses = [
+    const classes = [
+      "flex",
       ...resolveEnumClass(display),
       ...resolveEnumClass(position),
       ...resolveEnumClass(overflow),
       ...resolveEnumClass(visibility),
       ...resolveEnumClass(pointerEvents),
+
       ...resolveResponsiveClass("flex", direction),
-      ...resolveResponsiveClass("flex", wrap),
+      ...resolveResponsiveClass("flex-wrap", wrap),
       ...resolveResponsiveClass("justify", justify),
       ...resolveResponsiveClass("items", items),
       ...resolveResponsiveClass("text", align),
-
       ...resolveResponsiveClass("z", zIndex),
       ...resolveResponsiveClass("aspect", aspectRatio),
       ...resolveResponsiveClass("opacity", opacity),
@@ -104,12 +109,14 @@ const FlexLayout = forwardRef<FlexElement, FlexProps>(
         ...resolveResponsiveClass("w", size),
         ...resolveResponsiveClass("h", size),
       ] : []),
+      
       ...resolveResponsiveClass("w", width),
       ...resolveResponsiveClass("h", height),
       ...resolveResponsiveClass("min-w", minWidth),
       ...resolveResponsiveClass("min-h", minHeight),
       ...resolveResponsiveClass("max-w", maxWidth),
       ...resolveResponsiveClass("max-h", maxHeight),
+
       ...resolveResponsiveClass("top", top),
       ...resolveResponsiveClass("bottom", bottom),
       ...resolveResponsiveClass("left", left),
@@ -138,10 +145,12 @@ const FlexLayout = forwardRef<FlexElement, FlexProps>(
       ...resolveResponsiveClass("space-y", spaceY),
     ];
 
-    return <Layout ref={ref} className={cn("flex", dynamicClasses, className)} {...props} />;
+    return (
+      <Component ref={ref} className={cn(classes, className)} {...props} />
+    );
   }
 );
 
 FlexLayout.displayName = "FlexLayout";
 
-export { FlexLayout as default };
+export default FlexLayout;
