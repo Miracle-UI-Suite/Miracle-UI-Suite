@@ -18,17 +18,17 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Zyron-HQ/Miracle-UI-Suite.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Zyron-HQ/Miracle-UI-Suite/issues"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alchemyst-devs/Miracle-UI-Suite.git"
   },
-  "homepage": "https://github.com/Zyron-HQ/Miracle-UI-Suite#readme",
+  "bugs": {
+    "url": "https://github.com/alchemyst-devs/Miracle-UI-Suite/issues"
+  },
+  "homepage": "https://github.com/alchemyst-devs/Miracle-UI-Suite#readme",
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-accordion": "^1.2.8",
