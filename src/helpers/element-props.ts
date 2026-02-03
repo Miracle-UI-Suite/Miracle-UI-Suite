@@ -25,13 +25,13 @@
 import { ComponentPropsWithoutRef, ElementType } from 'react'
 
 type ElementPropsAs<
-  E extends ElementType<any>,
-  P extends ComponentPropsWithoutRef<E>['as']
+    E extends ElementType<any>,
+    P extends ComponentPropsWithoutRef<E>['as']
 > = Omit<Extract<ComponentPropsWithoutRef<E>, { as: P }>, 'as' | 'asChild'>
 
 type ElementPropsWithout<
-  P extends ElementType,
-  O extends Omit<string, keyof ComponentPropsWithoutRef<P>>
+    P extends ElementType,
+    O extends Omit<string, keyof ComponentPropsWithoutRef<P>>
 > = Omit<ComponentPropsWithoutRef<P>, O & string>
 
 type RemovedProps = 'asChild' | 'defaultChecked' | 'defaultValue' | 'color'

@@ -134,13 +134,13 @@ We welcome contributions! To contribute:
 
 ## Reporting Issues
 
-If you encounter any issues or have feature requests, please open an issue on [GitHub](https://github.com/alchemyst-devs/Miracle-UI-Suite/issues).
+If you encounter any issues or have feature requests, please open an issue on [GitHub](https://github.com/alchemystio/Miracle-UI-Suite/issues).
 
 ---
 
 ## Support
 
-If you find Miracle UI Suite helpful, please consider giving it a ⭐ on [GitHub](https://github.com/alchemyst-devs/Miracle-UI-Suite)!
+If you find Miracle UI Suite helpful, please consider giving it a ⭐ on [GitHub](https://github.com/alchemystio/Miracle-UI-Suite)!
 
 ---
 

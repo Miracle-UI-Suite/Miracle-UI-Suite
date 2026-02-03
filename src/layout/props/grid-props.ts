@@ -29,122 +29,122 @@ import type { BaseProps } from './base-props'
  * Responsive values can be passed as `{ initial: T; md?: T; ... }`.
  */
 type ResponsiveValue<T> =
-  | T
-  | { initial?: T; [breakpoint: string]: T | undefined }
+    | T
+    | { initial?: T;[breakpoint: string]: T | undefined }
 
 type AutoFlow = 'row' | 'col' | 'row-dense' | 'col-dense' | 'dense'
 type JustifyContent =
-  | 'start'
-  | 'center'
-  | 'center-safe'
-  | 'end'
-  | 'end-safe'
-  | 'between'
-  | 'around'
-  | 'evenly'
-  | 'stretch'
-  | 'baseline'
-  | 'normal'
+    | 'start'
+    | 'center'
+    | 'center-safe'
+    | 'end'
+    | 'end-safe'
+    | 'between'
+    | 'around'
+    | 'evenly'
+    | 'stretch'
+    | 'baseline'
+    | 'normal'
 type AlignContent =
-  | 'start'
-  | 'center'
-  | 'end'
-  | 'between'
-  | 'around'
-  | 'stretch'
-  | 'baseline'
-  | 'stretch'
-  | 'normal'
+    | 'start'
+    | 'center'
+    | 'end'
+    | 'between'
+    | 'around'
+    | 'stretch'
+    | 'baseline'
+    | 'stretch'
+    | 'normal'
 type PlaceContent =
-  | 'start'
-  | 'center'
-  | 'center-safe'
-  | 'end'
-  | 'end-safe'
-  | 'between'
-  | 'around'
-  | 'evenly'
-  | 'stretch'
-  | 'baseline'
+    | 'start'
+    | 'center'
+    | 'center-safe'
+    | 'end'
+    | 'end-safe'
+    | 'between'
+    | 'around'
+    | 'evenly'
+    | 'stretch'
+    | 'baseline'
 type JustifyItems =
-  | 'start'
-  | 'center'
-  | 'center-safe'
-  | 'end'
-  | 'end-safe'
-  | 'stretch'
-  | 'normal'
+    | 'start'
+    | 'center'
+    | 'center-safe'
+    | 'end'
+    | 'end-safe'
+    | 'stretch'
+    | 'normal'
 type AlignItems =
-  | 'start'
-  | 'center'
-  | 'center-safe'
-  | 'end'
-  | 'end-safe'
-  | 'stretch'
-  | 'baseline'
-  | 'baseline-last'
+    | 'start'
+    | 'center'
+    | 'center-safe'
+    | 'end'
+    | 'end-safe'
+    | 'stretch'
+    | 'baseline'
+    | 'baseline-last'
 type PlaceItems =
-  | 'start'
-  | 'center'
-  | 'center-safe'
-  | 'end'
-  | 'end-safe'
-  | 'stretch'
-  | 'baseline'
+    | 'start'
+    | 'center'
+    | 'center-safe'
+    | 'end'
+    | 'end-safe'
+    | 'stretch'
+    | 'baseline'
 type JustifySelf =
-  | 'auto'
-  | 'start'
-  | 'center'
-  | 'center-safe'
-  | 'end'
-  | 'end-safe'
-  | 'stretch'
+    | 'auto'
+    | 'start'
+    | 'center'
+    | 'center-safe'
+    | 'end'
+    | 'end-safe'
+    | 'stretch'
 type AlignSelf =
-  | 'auto'
-  | 'start'
-  | 'center'
-  | 'center-safe'
-  | 'end'
-  | 'end-safe'
-  | 'stretch'
-  | 'baseline'
-  | 'baseline-last'
+    | 'auto'
+    | 'start'
+    | 'center'
+    | 'center-safe'
+    | 'end'
+    | 'end-safe'
+    | 'stretch'
+    | 'baseline'
+    | 'baseline-last'
 type PlaceSelf =
-  | 'auto'
-  | 'start'
-  | 'center'
-  | 'center-safe'
-  | 'end'
-  | 'end-safe'
-  | 'stretch'
+    | 'auto'
+    | 'start'
+    | 'center'
+    | 'center-safe'
+    | 'end'
+    | 'end-safe'
+    | 'stretch'
 
 type GridProps = BaseProps & {
-  // Grid template
-  columns?: ResponsiveValue<number | string> // maps to `grid-cols-*`
-  rows?: ResponsiveValue<number | string> // maps to `grid-rows-*`
-  autoFlow?: ResponsiveValue<AutoFlow> // maps to `grid-flow-*`
+    // Grid template
+    columns?: ResponsiveValue<number | string> // maps to `grid-cols-*`
+    rows?: ResponsiveValue<number | string> // maps to `grid-rows-*`
+    autoFlow?: ResponsiveValue<AutoFlow> // maps to `grid-flow-*`
 
-  // Grid alignment
-  justifyContent?: ResponsiveValue<JustifyContent> // `justify-*`
-  alignContent?: ResponsiveValue<AlignContent> // `content-*`
-  placeContent?: ResponsiveValue<PlaceContent>
-  justifyItems?: ResponsiveValue<JustifyItems> // `justify-items-*`
-  alignItems?: ResponsiveValue<AlignItems> // `items-*`
-  placeItems?: ResponsiveValue<PlaceItems> // `place-items-*`
-  justifySelf?: ResponsiveValue<JustifySelf>
-  alignSelf?: ResponsiveValue<AlignSelf>
-  placeSelf?: ResponsiveValue<PlaceSelf>
+    // Grid alignment
+    justifyContent?: ResponsiveValue<JustifyContent> // `justify-*`
+    alignContent?: ResponsiveValue<AlignContent> // `content-*`
+    placeContent?: ResponsiveValue<PlaceContent>
+    justifyItems?: ResponsiveValue<JustifyItems> // `justify-items-*`
+    alignItems?: ResponsiveValue<AlignItems> // `items-*`
+    placeItems?: ResponsiveValue<PlaceItems> // `place-items-*`
+    justifySelf?: ResponsiveValue<JustifySelf>
+    alignSelf?: ResponsiveValue<AlignSelf>
+    placeSelf?: ResponsiveValue<PlaceSelf>
 
-  // Grid item placement (Tailwind-supported)
-  colSpan?: ResponsiveValue<number | 'full' | 'auto' | string> // `col-span-*`
-  colStart?: ResponsiveValue<number | 'auto' | string> // `col-start-*`
-  colEnd?: ResponsiveValue<number | 'auto' | string> // `col-end-*`
-  col?: ResponsiveValue<number | string> // `col-*`
+    // Grid item placement (Tailwind-supported)
+    colSpan?: ResponsiveValue<number | 'full' | 'auto' | string> // `col-span-*`
+    colStart?: ResponsiveValue<number | 'auto' | string> // `col-start-*`
+    colEnd?: ResponsiveValue<number | 'auto' | string> // `col-end-*`
+    col?: ResponsiveValue<number | string> // `col-*`
 
-  rowSpan?: ResponsiveValue<number | 'full' | 'auto' | string> // `row-span-*`
-  rowStart?: ResponsiveValue<number | 'auto' | string> // `row-start-*`
-  rowEnd?: ResponsiveValue<number | 'auto' | string> // `row-end-*`
-  row?: ResponsiveValue<number | string> // `row-*`
+    rowSpan?: ResponsiveValue<number | 'full' | 'auto' | string> // `row-span-*`
+    rowStart?: ResponsiveValue<number | 'auto' | string> // `row-start-*`
+    rowEnd?: ResponsiveValue<number | 'auto' | string> // `row-end-*`
+    row?: ResponsiveValue<number | string> // `row-*`
 }
 
 export type { GridProps }

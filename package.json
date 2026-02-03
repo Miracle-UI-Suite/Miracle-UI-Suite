@@ -23,12 +23,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alchemyst-devs/Miracle-UI-Suite.git"
+    "url": "git+https://github.com/alchemystio/Miracle-UI-Suite.git"
   },
   "bugs": {
-    "url": "https://github.com/alchemyst-devs/Miracle-UI-Suite/issues"
+    "url": "https://github.com/alchemystio/Miracle-UI-Suite/issues"
   },
-  "homepage": "https://github.com/alchemyst-devs/Miracle-UI-Suite#readme",
+  "homepage": "https://github.com/alchemystio/Miracle-UI-Suite#readme",
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-accordion": "^1.2.8",
