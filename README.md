@@ -1,6 +1,6 @@
-# Miracle UI Suite
+# Scaffold UI
 
-**Miracle UI Suite** is a modern, free-to-premium suite of React-based web components and templates designed to help developers build responsive, accessible, and seamless user experiences. With a focus on flexibility and performance, Miracle UI Suite provides a robust foundation for creating stunning web applications.
+**Scaffold UI** is a modern, free-to-premium suite of React-based web components and templates designed to help developers build responsive, accessible, and seamless user experiences. With a focus on flexibility and performance, Scaffold UI provides a robust foundation for creating stunning web applications.
 
 ---
 
@@ -18,27 +18,27 @@
 
 ## Installation
 
-Install Miracle UI Suite via npm or yarn:
+Install Scaffold UI via npm or yarn:
 
 ```bash
 # Using npm
-npm install miracle-ui-suite
+npm install scaffold-ui
 
 # Using yarn
-yarn add miracle-ui-suite
+yarn add scaffold-ui
 ```
 
 ---
 
 ## Getting Started
 
-Here’s how to start using Miracle UI Suite in your React project:
+Here’s how to start using Scaffold UI in your React project:
 
 ### 1. Import the Component
 Import the desired component into your project:
 
 ```javascript
-import { Button } from 'miracle-ui-suite';
+import { Button } from 'scaffold-ui';
 ```
 
 ### 2. Use the Component
@@ -59,7 +59,7 @@ function ReactApp() {
 ## Configuration
 
 ### Tailwind CSS Setup
-Miracle UI Suite uses Tailwind CSS for styling. Ensure your project is configured to use Tailwind CSS:
+Scaffold UI uses Tailwind CSS for styling. Ensure your project is configured to use Tailwind CSS:
 
 1. Install Tailwind CSS:
    ```bash
@@ -96,13 +96,13 @@ Miracle UI Suite uses Tailwind CSS for styling. Ensure your project is configure
 
 ## Documentation
 
-For detailed documentation, including component usage, props, and examples, visit the [official documentation](https://miracleui.com/docs/introduction).
+For detailed documentation, including component usage, props, and examples, visit the [official documentation](https://scaffoldui.com/docs/introduction).
 
 ---
 
 ## Components
 
-Miracle UI Suite includes a growing list of components, such as:
+Scaffold UI includes a growing list of components, such as:
 
 - Buttons
 - Modals
@@ -134,17 +134,17 @@ We welcome contributions! To contribute:
 
 ## Reporting Issues
 
-If you encounter any issues or have feature requests, please open an issue on [GitHub](https://github.com/alchemystio/Miracle-UI-Suite/issues).
+If you encounter any issues or have feature requests, please open an issue on [GitHub](https://github.com/alchemystio/Scaffold-UI/issues).
 
 ---
 
 ## Support
 
-If you find Miracle UI Suite helpful, please consider giving it a ⭐ on [GitHub](https://github.com/alchemystio/Miracle-UI-Suite)!
+If you find Scaffold UI helpful, please consider giving it a ⭐ on [GitHub](https://github.com/alchemystio/Scaffold-UI)!
 
 ---
 
 ## Contact
 
-For inquiries, reach out to us at [info@miracleui.com](mailto:info@miracleui.com).
+For inquiries, reach out to us at [info@scaffoldui.com](mailto:info@scaffoldui.com).
 ```

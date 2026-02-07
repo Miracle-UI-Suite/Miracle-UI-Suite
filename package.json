@@ -1,5 +1,5 @@
 {
-  "name": "miracle-ui-suite",
+  "name": "scaffold-ui",
   "version": "1.0.0",
   "description": "Let's create a free-to-premium suite of modern web components and templates, building responsive designs and seamless user experiences.",
   "main": "dist/index.js",
@@ -23,12 +23,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alchemystio/Miracle-UI-Suite.git"
+  "url": "git+https://github.com/alchemystio/scaffold-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/alchemystio/Miracle-UI-Suite/issues"
+  "url": "https://github.com/alchemystio/scaffold-ui/issues"
   },
-  "homepage": "https://github.com/alchemystio/Miracle-UI-Suite#readme",
+  "homepage": "https://github.com/alchemystio/scaffold-ui#readme",
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-accordion": "^1.2.8",
